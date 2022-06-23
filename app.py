@@ -9,7 +9,7 @@ myheading1='Predicting Home Sale Prices in Ames, Iowa'
 image1='ames_ia.gif'
 tabtitle = 'Ames Housing'
 sourceurl = 'http://jse.amstat.org/v19n3/decock.pdf'
-githublink = 'https://github.com/plotly-dash-apps/501-linear-reg-ames-housing'
+githublink = 'https://github.com/shannonkel/shannonk-ames-housing'
 googleDoc = './data/Regression Equation.xlsx'
 
 
@@ -36,7 +36,7 @@ app.layout = html.Div(children=[
                 dcc.Input(id='TotalSF', value=2000, type='number', min=100, max=5000, step=1),
                 html.Div('Single Family Home:'),
                 dcc.Input(id='SingleFam', value=0, type='number', min=0, max=1, step=1),
-                html.Div('Garage Size:'),
+                html.Div('Garage Car Capacity:'),
                 dcc.Input(id='GarageCars', value=0, type='number', min=0, max=3, step=1),
 
             ], className='four columns'),
@@ -58,7 +58,7 @@ app.layout = html.Div(children=[
     html.Br(),
     html.Br(),
     html.H4('Regression Equation:'),
-    html.Div('Predicted Price = (- $1,360.5K Baseline) + ($0.7K * Year Built) + ($12.7K * Bathrooms) + (- $7.7K * Bedrooms) + ($0.049K * Total Square Feet) + ($ 25.2K * Single Family Home) + ($6.6 K * GarageCars)'),
+    html.Div('Predicted Price = (- $1,360.5K Baseline) + ($0.7K * Year Built) + ($12.7K * Bathrooms) + (- $7.7K * Bedrooms) + ($0.049K * Total Square Feet) + ($ 25.2K * Single Family Home) + ($6.6 K * Garage Car Capacity)'),
     html.Br(),
     html.A('Google Spreadsheet', href=googleDoc),
     html.Br(),
