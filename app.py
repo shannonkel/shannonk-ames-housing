@@ -10,6 +10,7 @@ image1='ames_ia.gif'
 tabtitle = 'Ames Housing'
 sourceurl = 'http://jse.amstat.org/v19n3/decock.pdf'
 githublink = 'https://github.com/plotly-dash-apps/501-linear-reg-ames-housing'
+googleDoc = './data/Regression Equation.xlsx'
 
 
 ########### Initiate the app
@@ -59,7 +60,7 @@ app.layout = html.Div(children=[
     html.H4('Regression Equation:'),
     html.Div('Predicted Price = (- $1,360.5K Baseline) + ($0.7K * Year Built) + ($12.7K * Bathrooms) + (- $7.7K * Bedrooms) + ($0.049K * Total Square Feet) + ($ 25.2K * Single Family Home) + (- $6.6 K * GarageCars)'),
     html.Br(),
-    html.A('Google Spreadsheet', href='https://docs.google.com/spreadsheets/d/1q2ustRvY-GcmPO5NYudvsBEGNs5Na5p_8LMeS4oM35U/edit?usp=sharing'),
+    html.A('Google Spreadsheet', href=googleDoc),
     html.Br(),
     html.A('Code on Github', href=githublink),
     html.Br(),
@@ -80,7 +81,7 @@ app.layout = html.Div(children=[
     State(component_id='GarageCars', component_property='value')
 
 )
-def ames_lr_function(clicks, YearBuilt,Bathrooms,BedroomAbvGr,TotalSF,SingleFam,LargeNeighborhood):
+def ames_lr_function(clicks, YearBuilt,Bathrooms,BedroomAbvGr,TotalSF,SingleFam,GarageCars):
     if clicks==0:
         return "waiting for inputs"
     else:
